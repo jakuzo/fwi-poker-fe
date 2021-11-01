@@ -4,6 +4,8 @@ import {
   createEntityAdapter,
 } from '@reduxjs/toolkit';
 
+import Api from '../api';
+
 const adapter = createEntityAdapter();
 
 export const {
@@ -23,13 +25,14 @@ export const fetchAllPlayers = createAsyncThunk(
   'players/fetchAll',
   async () => {
     // const response = await fetch('/api/players', { headers }); // old, keeping for reference
-    const response = await fetch('http://localhost:3001/players', {
-      headers,
-      mode: 'cors',
-    });
-    const json = await response.json();
+    // const response = await fetch('http://localhost:3001/players', {
+    //   headers,
+    //   mode: 'cors',
+    // });
+    // const json = await response.json();
 
-    return json;
+    const response = await Api.Players.get();
+    return response;
   }
 );
 

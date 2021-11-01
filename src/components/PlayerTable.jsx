@@ -7,7 +7,6 @@ import PlayerTableHeader from './PlayerTableHeader';
 import styles from './PlayerTable.module.scss';
 
 export default function PlayerTable(props) {
-  console.log('Player table props: ', props);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAllPlayers());

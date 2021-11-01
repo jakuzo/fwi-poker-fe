@@ -1,13 +1,25 @@
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 import { TextField } from '@react-md/form';
 import { Button } from '@react-md/button';
 import { Divider } from '@react-md/divider';
 
+import { fetchAllPlayers } from '../appState/players';
 import styles from './PlayerMenu.module.scss';
 
 export default function PlayerMenu(props) {
   const { config, onClose } = props;
   const { playerData } = config;
+
+  const dispatch = useDispatch();
+
+  const saveHandler = async () => {
+    console.log('Inside of save handler');
+
+    // TODO: If creating new player, perform and await create request
+    // Then, to ensure our app is in sync, perform a fetch all players
+    dispatch(fetchAllPlayers());
+  };
 
   return (
     <div className={cn(styles.container)}>
@@ -46,7 +58,7 @@ export default function PlayerMenu(props) {
         </div>
         <Divider />
         <div className={cn(styles.bottom)}>
-          <Button>Save</Button>
+          <Button onClick={() => saveHandler()}>Save</Button>
           {config.menuType === 'edit' && <Button theme="error">Delete</Button>}
         </div>
       </div>
