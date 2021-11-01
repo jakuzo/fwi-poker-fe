@@ -15,7 +15,6 @@ const objToQueryString = (obj) => {
   Object.keys(obj).forEach((key) => {
     queryString = queryString.concat(`${key}=${obj[`${key}`]}&`);
   });
-  console.log('Query string: ', queryString);
   return queryString;
 };
 

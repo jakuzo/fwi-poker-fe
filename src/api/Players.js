@@ -17,6 +17,21 @@ const get = async (id) => {
     });
 };
 
+const getSorted = async (sortParams) => {
+  const url = `${endpoint}${Base.objToQueryString(sortParams)}`;
+
+  return Base.request(url, {
+    method: 'GET',
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      return json;
+    })
+    .catch((error) => {
+      return error;
+    });
+};
+
 const create = async (playerData) => {
   const url = `${endpoint}`;
 
@@ -67,6 +82,7 @@ const Players = {
   create,
   update,
   destroy,
+  getSorted,
 };
 
 export default Players;

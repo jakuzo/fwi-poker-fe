@@ -16,22 +16,18 @@ export const {
   selectTotal: getTotalPlayers,
 } = adapter.getSelectors((state) => state.players);
 
-const headers = new Headers({
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-});
-
 export const fetchAllPlayers = createAsyncThunk(
   'players/fetchAll',
   async () => {
-    // const response = await fetch('/api/players', { headers }); // old, keeping for reference
-    // const response = await fetch('http://localhost:3001/players', {
-    //   headers,
-    //   mode: 'cors',
-    // });
-    // const json = await response.json();
-
     const response = await Api.Players.get();
+    return response;
+  }
+);
+
+export const fetchAllPlayersSorted = createAsyncThunk(
+  'players/fetchAllSorted',
+  async (sortParams) => {
+    const response = await Api.Players.getSorted(sortParams);
     return response;
   }
 );
@@ -42,9 +38,13 @@ const { actions, reducer } = createSlice({
   name: 'players',
   initialState: PLAYERS_INITIAL_STATE,
   extraReducers: (builder) =>
-    builder.addCase(fetchAllPlayers.fulfilled, (state, action) => {
-      adapter.setAll(state, action.payload.items);
-    }),
+    builder
+      .addCase(fetchAllPlayers.fulfilled, (state, action) => {
+        adapter.setAll(state, action.payload.items);
+      })
+      .addCase(fetchAllPlayersSorted.fulfilled, (state, action) => {
+        adapter.setAll(state, action.payload.items);
+      }),
 });
 
 export const {
