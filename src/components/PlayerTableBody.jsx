@@ -5,13 +5,20 @@ import { getPlayers } from '../appState/players';
 import Avatar from './Avatar';
 import styles from './PlayerTableBody.module.scss';
 
-export default function PlayerTableBody() {
+export default function PlayerTableBody(props) {
+  const { onPlayerSelect } = props;
   const players = useSelector(getPlayers);
 
   return (
     <tbody className={styles.tbody}>
       {players.map(({ id, name, winnings, country, imageUrl }) => (
-        <tr key={id} className={styles.row}>
+        <tr
+          key={id}
+          className={styles.row}
+          onClick={() =>
+            onPlayerSelect?.({ id, name, winnings, country, imageUrl })
+          }
+        >
           <td className={styles.avatar}>
             <Avatar src={imageUrl} />
           </td>

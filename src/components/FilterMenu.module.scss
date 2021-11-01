@@ -1,0 +1,56 @@
+@use '../variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu {
+  margin-top: 5rem;
+  padding: 1rem 0.78rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 10px;
+  background-color: variables.$snow;
+}
+
+.menuTitle {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.itemTitle {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+}
+.content {
+  margin: 1rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.inputs {
+  padding: 1rem 0.5rem;
+}
+
+.input {
+  margin: 0.5rem 0;
+}
