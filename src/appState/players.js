@@ -15,13 +15,18 @@ export const {
 } = adapter.getSelectors((state) => state.players);
 
 const headers = new Headers({
+  Accept: 'application/json',
   'Content-Type': 'application/json',
 });
 
 export const fetchAllPlayers = createAsyncThunk(
   'players/fetchAll',
   async () => {
-    const response = await fetch('/api/players', { headers });
+    // const response = await fetch('/api/players', { headers }); // old, keeping for reference
+    const response = await fetch('http://localhost:3001/players', {
+      headers,
+      mode: 'cors',
+    });
     const json = await response.json();
 
     return json;
