@@ -11,7 +11,7 @@ const request = (url, options) => {
 };
 
 const objToQueryString = (obj) => {
-  queryString = '?';
+  let queryString = '?';
   Object.keys(obj).forEach((key) => {
     queryString = queryString.concat(`${key}=${obj[`${key}`]}&`);
   });

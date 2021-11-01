@@ -24,9 +24,7 @@ const create = async (playerData) => {
     method: 'POST',
     body: JSON.stringify(playerData),
   })
-    .then((response) => {
-      response.json();
-    })
+    .then((response) => response.json())
     .then((json) => {
       return json;
     })
@@ -36,14 +34,12 @@ const create = async (playerData) => {
 };
 
 const update = async (id, playerData) => {
-  const url = `${endpoint}/${id}/${queryString(playerData)}`;
+  const url = `${endpoint}/${id}/${Base.objToQueryString(playerData)}`;
 
   return Base.request(url, {
     method: 'PUT',
   })
-    .then((response) => {
-      response.json();
-    })
+    .then((response) => response.json())
     .then((json) => {
       return json;
     })
@@ -57,9 +53,7 @@ const destroy = async (id) => {
   return Base.request(url, {
     method: 'DELETE',
   })
-    .then((response) => {
-      response.json();
-    })
+    .then((response) => response.json())
     .then((json) => {
       return json;
     })
