@@ -1,6 +1,6 @@
 const endpoint =
   process.env.NODE_ENV === 'production'
-    ? 'http://wow.wow:3001'
+    ? 'http://44.225.53.153:3001'
     : 'http://localhost:3001';
 
 const headers = new Headers({
