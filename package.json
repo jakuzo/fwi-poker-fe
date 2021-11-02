@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "dev": "NODE_ENV=test next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prod": "NODE_ENV=production next start",
+    "prod": "next start",
     "lint": "next lint",
     "test": "jest",
     "test-cy": "yarn cypress open",
