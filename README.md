@@ -40,6 +40,12 @@ yarn dev
 - The Filter/Player Menu components/styles should probably be consolidated into
   a single component.
 - These two components in particular are rather large.
+- Continuous Deployment
+- Would like to have added an additional application script to allow the local
+  frontend to communicate with the deployed API.
+- When creating a user, the user has an empty imageUrl and thus no profile pic.
+- When creating or editing a user, if there is a filter applied, the standard
+  fetch is applied with no filter which makes the table reload seem odd.
 
 ## Deployment
 
@@ -64,5 +70,5 @@ To check processes running:
 To stop a process
 
 ```sh
-  pm2 <process id>
+  pm2 stop <process id>
 ```
