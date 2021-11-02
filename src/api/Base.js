@@ -1,4 +1,7 @@
-const endpoint = 'http://localhost:3001';
+const endpoint =
+  process.env.NODE_ENV === 'production'
+    ? 'http://wow.wow:3001'
+    : 'http://localhost:3001';
 
 const headers = new Headers({
   Accept: 'application/json',
@@ -6,6 +9,7 @@ const headers = new Headers({
 });
 
 const request = (url, options) => {
+  console.log('BASE ENDPOINT: ', endpoint);
   const args = { ...options, mode: 'cors', headers };
   return fetch(url, args);
 };
