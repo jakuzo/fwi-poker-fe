@@ -1,6 +1,6 @@
 # fwi-fe-code-challenge
 
-The Frontend aspect of FWI's full stack developer code challenge.
+The Frontend code for FWI's Full Stack Developer Code Challenge.
 
 ### View the deployed version! http://44.225.53.153:3000
 
