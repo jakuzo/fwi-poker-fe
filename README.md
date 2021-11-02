@@ -2,6 +2,18 @@
 
 The Frontend aspect of FWI's full stack developer code challenge.
 
+View the deployed version of the frontend! http://44.225.53.153:3000
+
+This code base is slightly different than the primary FE challenge in that it
+communicates with an Api that I wrote: https://github.com/jakuzo/fwi-poker-api.
+
+### Project Setup
+
+```sh
+yarn --ignore-optional
+yarn dev
+```
+
 ### Challenge Checklist
 
 - [x] Create Player
@@ -10,13 +22,3 @@ The Frontend aspect of FWI's full stack developer code challenge.
 - [x] Implement sorting (optional)
 - [ ] Lazy loading/pagination (optional)
 - [ ] Tests (optional)
-
-It looks like you're trying to use TypeScript but do not have the required
-package(s) insta lled.
-
-Please install typescript and @types/node by running:
-
-yarn add --dev typescript @types/node
-
-If you are not trying to use TypeScript, please remove the tsconfig.json file
-from your pac kage root (and any TypeScript files in your pages directory).
