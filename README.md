@@ -7,7 +7,7 @@ The Frontend code for FWI's Full Stack Developer Code Challenge.
 This code base is slightly different than the primary FE challenge in that it
 communicates with the Api that I wrote: https://github.com/jakuzo/fwi-poker-api.
 
-Thus, inorder to test this code base locally, you will also need to run that api
+Thus, in order to test this code base locally, you will also need to run the api
 locally.
 
 For request documentation see: https://github.com/jakuzo/fwi-poker-api.
